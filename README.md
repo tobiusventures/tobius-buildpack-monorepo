@@ -1,7 +1,7 @@
 
 # Tobius Buildpack: Monorepo
 
-This buildpack converts an individual application within a monorepo into the main application (for Heroku).
+This buildpack converts a subfolder application within a monorepo into the main application (for Heroku).
 
 ## Usage
 
