@@ -6,19 +6,19 @@ local CACHE_DIR=$2
 local ENV_DIR=$3
 
 # set APP_DIR
-if [ ! -f $ENV_DIR/APP_FOLDER ]; then
-  echo "        \$APP_FOLDER is not set"
+if [ ! -f $ENV_DIR/APP_PATH ]; then
+  echo "        \$APP_PATH is not set"
   exit 1
 fi
-local APP_DIR=$(cat $ENV_DIR/APP_FOLDER)
+local APP_DIR=$(cat $ENV_DIR/APP_PATH)
 if [ ! -s $APP_DIR ]; then
-  echo "        \$APP_FOLDER value is empty"
+  echo "        \$APP_PATH value is empty"
   exit 1
 elif [ ! -d $BUILD_DIR/$APP_DIR ]; then
-  echo "        \$APP_FOLDER is not a directory"
+  echo "        \$APP_PATH is not a directory"
   exit 1
 elif [ ! "$(ls -A $BUILD_DIR/$APP_DIR)" ]; then
-  echo "        \$APP_FOLDER is an empty directory"
+  echo "        \$APP_PATH is an empty directory"
   exit 1
 fi
 
