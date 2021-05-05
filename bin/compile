@@ -11,8 +11,11 @@ if [ ! -f $ENV_DIR/APP_PATH ]; then
   exit 1
 fi
 APP_DIR=$(cat $ENV_DIR/APP_PATH)
+UUID=$(cat /proc/sys/kernel/random/uuid)
+echo "APP_DIR = $APP_DIR"
+echo "UUID = $UUID"
 if [ ! -s $APP_DIR ]; then
-  echo "        \$APP_PATH value is empty: $APP_PATH"
+  echo "        \$APP_PATH value is empty"
   exit 1
 elif [ ! -d $BUILD_DIR/$APP_DIR ]; then
   echo "        \$APP_PATH is not a directory"
