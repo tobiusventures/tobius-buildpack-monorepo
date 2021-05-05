@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 
 # compile arguments
-local BUILD_DIR=$1
-local CACHE_DIR=$2
-local ENV_DIR=$3
+BUILD_DIR=$1
+CACHE_DIR=$2
+ENV_DIR=$3
 
 # set APP_DIR
 if [ ! -f $ENV_DIR/APP_PATH ]; then
   echo "        \$APP_PATH is not set"
   exit 1
 fi
-local APP_DIR=$(cat $ENV_DIR/APP_PATH)
+APP_DIR=$(cat $ENV_DIR/APP_PATH)
 if [ ! -s $APP_DIR ]; then
   echo "        \$APP_PATH value is empty"
   exit 1
@@ -23,7 +23,7 @@ elif [ ! "$(ls -A $BUILD_DIR/$APP_DIR)" ]; then
 fi
 
 # Replace BUILD_DIR
-local UUID=$(cat /proc/sys/kernel/random/uuid)
+UUID=$(cat /proc/sys/kernel/random/uuid)
 rm -fr $CACHE_DIR/$UUID
 mv $APP_DIR/* $CACHE_DIR/$UUID/
 rm -fr $BUILD_DIR/*
