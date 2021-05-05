@@ -12,7 +12,7 @@ if [ ! -f $ENV_DIR/APP_PATH ]; then
 fi
 APP_DIR=$(cat $ENV_DIR/APP_PATH)
 if [ ! -s $APP_DIR ]; then
-  echo "        \$APP_PATH value is empty"
+  echo "        \$APP_PATH value is empty: $APP_PATH"
   exit 1
 elif [ ! -d $BUILD_DIR/$APP_DIR ]; then
   echo "        \$APP_PATH is not a directory"
