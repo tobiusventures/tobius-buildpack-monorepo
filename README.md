@@ -6,8 +6,8 @@ This buildpack converts an individual application within a monorepo into the mai
 ## Usage
 
 1. Add .monorepo file
-2. Configure Buildpack
-3. Configure $APP_PATH
+2. Add Buildpack
+3. Add $APP_PATH
 4. Push to Heroku
 
 ### 1. Add .monorepo file
@@ -23,14 +23,14 @@ This buildpack's detect script expects a `.monorepo` file to be found in the pro
 
 _Note: The file contents do not matter._
 
-### 2. Configure Buildpack
+### 2. Add Buildpack
 
 This Monorepo buildpack works by moving the application subfolder up to the root folder level. Since this needs to happen before the application buildpacks are engaged (e.g. Node, Ruby, etc) this buildpack needs to run first.
 
 1. Visit https://dashboard.heroku.com/apps/{YOURAPPNAME}/settings
 2. Configure the first buildpack as https://github.com/tobiusventures/tobius-buildpack-monorepo.git
 
-### 3. Configure $APP_PATH
+### 3. Add $APP_PATH
 
 Since a Monorepo will presumably have more than one subfolder application you need to tell it which one to use.
 
