@@ -30,6 +30,8 @@ This Monorepo buildpack works by moving the application subfolder up to the root
 1. Visit https://dashboard.heroku.com/apps/{YOURAPPNAME}/settings
 2. Configure the first buildpack as https://github.com/tobiusventures/tobius-buildpack-monorepo.git
 
+_Note: Once you add a custom buildpack Heroku stops guessing which "other" buildpacks to run after so you will have to add them to this screen manually now (after this buildpack)._
+
 ### 3. Add $APP_PATH
 
 Since a Monorepo will presumably have more than one subfolder application you need to tell it which one to use.
